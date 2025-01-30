@@ -1,10 +1,11 @@
 function calculateBMI() {
     const gender = document.getElementById('gender').value;
+    const age = parseFloat(document.getElementById('age').value);
     const weight = parseFloat(document.getElementById('weight').value);
     const height = parseFloat(document.getElementById('height').value);
   
-    if (!weight || !height || height <= 0 || weight <= 0) {
-      alert('Harap masukkan nilai yang valid untuk berat dan tinggi!');
+    if (!weight || !height || height <= 0 || weight <= 0 || age <= 0) {
+      alert('Harap masukkan nilai yang valid untuk usia, berat dan tinggi!');
       return;
     }
   
@@ -37,7 +38,7 @@ function calculateBMI() {
       }
     }
   
-    // Display the results
+    // Display hasil
     document.getElementById('bmi-result').innerText = `BMI Anda: ${bmi}`;
     document.getElementById('bmi-description').innerText = description;
   }
